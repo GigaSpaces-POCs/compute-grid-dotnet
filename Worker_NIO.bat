@@ -1,0 +1,4 @@
+SET XAP_NIC_ADDRESS=SUP03
+SET XAP_LOOKUP_GROUPS=ght1
+SET SPACE_NAME=AIGDemo
+Worker\bin\x64\Debug\Worker.exe  jini://*/*/%SPACE_NAME%?groups=ght1 NIO 500

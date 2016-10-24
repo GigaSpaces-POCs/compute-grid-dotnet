@@ -1,0 +1,1 @@
+Master\bin\x64\Debug\Master.exe jini://*/*/AIGDemo?groups=ght1 200 10

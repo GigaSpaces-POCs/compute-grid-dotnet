@@ -1,0 +1,8 @@
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\bin\Debug\Model.dll
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\bin\Debug\Model.pdb
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\bin\Debug\GigaSpaces.Core.dll
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\bin\Debug\GigaSpaces.NetToJava.dll
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\bin\Debug\GigaSpaces.Core.xml
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\obj\Debug\Model.dll
+C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Model\obj\Debug\Model.pdb
