@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace MasterWorkerModel
 {
+    [Serializable]
     [SpaceClass]
     public class Result : Base
     {
+        public Dictionary<String, Double> resultData { get; set; }
     }
 }

@@ -1,2 +1,3 @@
-# compute-grid-dotnet
-compute-grid using .Net master and workers
+# MasterWorker_DotNet
+.NET Master worker project
+

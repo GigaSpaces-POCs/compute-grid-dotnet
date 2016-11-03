@@ -23,7 +23,7 @@ namespace WorkerProject
                     workerProcess.StartDateTime = DateTime.Now;
                     IdQuery<WorkerProcess> idQuery = new IdQuery<WorkerProcess>(workerProcess.ID);
                     //IChangeResult<WorkerProcess> changeResult = Worker.SpaceProxy.Change<WorkerProcess>(idQuery, new ChangeSet().Set("LastUpdateDateTime", DateTime.Now).Lease(10000));
-                    IChangeResult<WorkerProcess> changeResult = Worker.SpaceProxy.Change<WorkerProcess>(idQuery, new ChangeSet().Lease(10000));
+                    IChangeResult<WorkerProcess> changeResult = Worker.ComputeSpaceProxy.Change<WorkerProcess>(idQuery, new ChangeSet().Lease(10000));
                     if (changeResult.NumberOfChangedEntries == 0)
                     {
                         Console.WriteLine("new workerProcess added " + count++ + ", timeout=" + timeout);
@@ -48,7 +48,7 @@ namespace WorkerProject
             workerProcess.ID = workerProcess.HostName + "=" + workerProcess.ProcessID;
             workerProcess.StartDateTime = DateTime.Now;
             workerProcess.LastUpdateDateTime = DateTime.Now;
-            Worker.SpaceProxy.Write(workerProcess, 5000);
+            Worker.ComputeSpaceProxy.Write(workerProcess, 5000);
         }
     }
 }

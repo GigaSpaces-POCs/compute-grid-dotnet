@@ -25,13 +25,13 @@ namespace WorkerProject
             {
                 try
                 {
-                    Request request = Worker.SpaceProxy.Read<Request>(template,1000);
+                    Request request = Worker.ComputeSpaceProxy.Read<Request>(template,1000);
                     Console.WriteLine("WorkerThread.DoWork called for " + request.JobID + " - " + request.TaskID);
                     //process Data here and return processed data
                     Result result = new Result();
                     result.JobID = request.JobID;
                     result.TaskID = request.TaskID;
-                    Worker.SpaceProxy.Write(result);
+                    Worker.ComputeSpaceProxy.Write(result);
 
                     Thread.Sleep(Worker.SleepTime);
                 }

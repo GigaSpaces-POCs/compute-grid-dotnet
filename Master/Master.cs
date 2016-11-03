@@ -7,6 +7,7 @@ using System.Net;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace MasterProject
 {
@@ -21,6 +22,12 @@ namespace MasterProject
         public static int NumberOfJobs = 100;
         public static int NumberOfTask = 5;
         public static int Timeout = 1000;
+        static int MapIndex = 0;
+        static int tradesPerTask = 10;
+        static Double Rate = 0.05;
+        static Dictionary<String, Double> aggResults = new Dictionary<String, Double>();
+        static Dictionary<int, object[]> IdsMap = new Dictionary<int, object[]>();
+
 
         public static void Main(string[] args)
         {
@@ -35,7 +42,7 @@ namespace MasterProject
             else
             {
                 url = args[0];
-                NumberOfJobs = args.Length == 1 ? 1000 : Convert.ToInt32(args[1]);
+                tradesPerTask = args.Length == 1 ? 10 : Convert.ToInt32(args[1]);
                 NumberOfTask = args.Length == 2 ? 10 : Convert.ToInt32(args[2]);
             }
             Console.WriteLine("*** Connecting to remote space named '" + url + "' From Master...");
@@ -49,20 +56,26 @@ namespace MasterProject
 
         public Master()
         {
-            Console.WriteLine(Environment.NewLine + "Welcome to XAP.NET 11 Master!" + Environment.NewLine);
+            Console.WriteLine(Environment.NewLine + "Welcome to XAP.NET 12 Master!" + Environment.NewLine);
             try
             {
                 TxnManager = GigaSpacesFactory.CreateDistributedTransactionManager();
                 Console.WriteLine("*** Connected to space  From Master.");
+                int numOfTrades = SpaceProxy.Count(new Trade());
+                NumberOfJobs = (int)(numOfTrades / (NumberOfTask * tradesPerTask));
                 Console.WriteLine("*** NumberOfJobs=" + NumberOfJobs);
-
+                Console.WriteLine("Rate is: " + (int)(Rate * 100) + "%");
+                Console.WriteLine();
+                InitIdsMap(numOfTrades);
                 GenenateJobs();
+                Console.WriteLine();
+                DisplayResults();
 
-                Console.WriteLine(Environment.NewLine + "Hello World Example finished successfully!" + Environment.NewLine);
+                Console.WriteLine(Environment.NewLine + "NPV Calculation Example finished successfully!" + Environment.NewLine);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(Environment.NewLine + "Hello World Example failed: " + ex);
+                Console.WriteLine(Environment.NewLine + "NPV Calculation Example failed: " + ex);
             }
         }
 
@@ -74,9 +87,11 @@ namespace MasterProject
                 GridService[] gridServiceA = new GridService[parallelThread];
                 for (int j = 0; j < parallelThread; j++)
                 {
+                    
                     GridService gridService = GridAPI.createService(i + "");
                     Dictionary<String, String> parameters = new Dictionary<String, String>();
                     parameters.Add("param1", ((i*10) + j) + "");
+                    Console.WriteLine("Submiting Job");
                     Job job = gridService.Submit("Function1", parameters);
                     gridServiceA[j] = gridService;
                 }
@@ -96,9 +111,38 @@ namespace MasterProject
                 for (int k = 0; k < taskArray.Length; k++)
                 {
                     serviceDataA[k] = taskArray[k].Result;
-                    Console.WriteLine("From GenenateJobs using Task now Results found for k=" + k);
+                    for (int l = 0; l < serviceDataA[k].Data.Length; l++ )
+                        if (serviceDataA[k].Data[l] != null)
+                        {
+                            CalculateNPVUtil.subreducer(aggResults, serviceDataA[k].Data[l].resultData); 
+                        }
+                        
+                 
+                        Console.WriteLine("From GenenateJobs using Task now Results found for k=" + k);
                 }
             }
+        }
+
+        public static void DisplayResults() {
+                Console.WriteLine("Book0 " + "NPV: " + aggResults["Book0"]);
+                Console.WriteLine("Book1 " + "NPV: " + aggResults["Book1"]);
+                Console.WriteLine("Book2 " + "NPV: " + aggResults["Book2"]);
+                Console.WriteLine("Book3 " + "NPV: " + aggResults["Book3"]);
+        }
+
+        public static void InitIdsMap(int nTrades){
+            int acc = 1;
+            for (int i = 0; i < nTrades / tradesPerTask; i++)
+            {
+                Object[] ids = new Object[tradesPerTask];
+                for (int j = 0; j < tradesPerTask; j++)
+                {
+                    ids[j] = acc;
+                    acc++;
+                }
+                IdsMap.Add(i, ids);
+            }
+
         }
 
         public static Job submitJob(int tasks, String serviceName, String functionName, Dictionary<String, String> paramters)
@@ -107,17 +151,21 @@ namespace MasterProject
             Console.WriteLine(" - Executing Job " + JobId);
             JobResult jobResult = new JobResult();
             Request[] requests = new Request[tasks];
-            for (int i = 0; i < tasks; i++)
-            {
-                requests[i] = new Request();
-                requests[i].JobID = JobId + "";
-                requests[i].TaskID = ((JobId) + "_" + (i));
-                requests[i].Payload = "PayloadData_" + requests[i].TaskID;
-                requests[i].ServiceName = serviceName;
-                requests[i].FunctionName = functionName;
-                requests[i].Parameters = paramters;
-                requests[i].Priority = (i % 4) + 1;
-            }
+            
+                for (int i = 0; i < tasks; i++)
+                {
+                    requests[i] = new Request();
+                    requests[i].JobID = JobId + "";
+                    requests[i].TaskID = ((JobId) + "_" + (i));
+                    requests[i].Payload = "PayloadData_" + requests[i].TaskID;
+                    requests[i].ServiceName = serviceName;
+                    requests[i].FunctionName = functionName;
+                    requests[i].Parameters = paramters;
+                    requests[i].Priority = (i % 4) + 1;
+                    requests[i].Rate = Rate;
+                    requests[i].TradeIds = IdsMap[MapIndex];
+                    MapIndex++;   
+                }
             try
             {
                 SpaceProxy.WriteMultiple(requests);

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MasterWorkerModel
 {
+    [Serializable]
     public class ServiceData
     {
         public string ID { get; set; }

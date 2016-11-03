@@ -10,7 +10,7 @@ namespace WorkerProject
 {
     class Worker
     {
-        public static ISpaceProxy SpaceProxy;
+        public static ISpaceProxy ComputeSpaceProxy;
         public static int SleepTime;
         public static String HostName;
         public static Process CurrentProcess = null;
@@ -21,9 +21,9 @@ namespace WorkerProject
             HostName = Dns.GetHostName();
             CurrentProcess = Process.GetCurrentProcess();
             String url = args[0];
+           
             Console.WriteLine("*** Connecting to remote space named '" + url + "' from Worker...");
-            SpaceProxy = GigaSpacesFactory.FindSpace(url);
-
+            ComputeSpaceProxy = GigaSpacesFactory.FindSpace(url);
             WorkerHeartbeat masterHeartbeat = new WorkerHeartbeat(Timeout);
             Thread workerThread = new Thread(masterHeartbeat.DoWork);
             workerThread.Start();
@@ -39,17 +39,17 @@ namespace WorkerProject
             workerProcess.ProcessID = CurrentProcess.Id;
             workerProcess.ID = HostName + "=" + CurrentProcess.Id;
             workerProcess.StartDateTime = DateTime.Now;
-            SpaceProxy.Write(workerProcess, 5000);
+            ComputeSpaceProxy.Write(workerProcess, 5000);
 
             String ioType = args.Length == 1 ? "NIO" : args[1];
             SleepTime = args.Length == 2 ? 2000 : Convert.ToInt32(args[2]);
             if (ioType.Equals("IO"))
             {
-                IEventListenerContainer<Request> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Request>(SpaceProxy, new WorkeIO());
+                IEventListenerContainer<Request> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Request>(ComputeSpaceProxy, new WorkeIO(ComputeSpaceProxy));
                 eventListenerContainer.Start();
             } else if (ioType.Equals("NIO"))
             {
-                IEventListenerContainer<Request> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Request>(SpaceProxy, new WorkeNIO());
+                IEventListenerContainer<Request> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Request>(ComputeSpaceProxy, new WorkeNIO(ComputeSpaceProxy));
                 eventListenerContainer.Start();
             } else
             {

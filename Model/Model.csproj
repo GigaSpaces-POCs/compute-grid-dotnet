@@ -7,10 +7,11 @@
     <ProjectGuid>{1A3F6AAB-B18C-4805-9B52-4B0E5EB8779E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Model</RootNamespace>
+    <RootNamespace>MasterWorkerModel</RootNamespace>
     <AssemblyName>Model</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,6 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="Trade\CacheFlowData.cs" />
+    <Compile Include="Trade\CalculateNPVUtil.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="JobResult.cs" />
     <Compile Include="MasterProcess.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Request.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="ServiceData.cs" />
+    <Compile Include="Trade\Trade.cs" />
     <Compile Include="WorkerProcess.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

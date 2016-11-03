@@ -73,6 +73,7 @@ namespace MasterProject
             Master.SpaceProxy.Write(jobResult);
             Console.WriteLine(DateTime.Now +
                 " - Done executing Job and job object removed from space " + job.JobID);
+            serviceData.Data = finalResult;
             return serviceData;
         }
 

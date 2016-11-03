@@ -3,6 +3,7 @@ using System;
 
 namespace MasterWorkerModel
 {
+    [Serializable]
     [SpaceClass]
     public class MasterProcess : BaseProcess
     {

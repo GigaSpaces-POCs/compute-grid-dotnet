@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MasterWorkerModel
 {
+    [Serializable]
     [SpaceClass]
     public class Base
     {
