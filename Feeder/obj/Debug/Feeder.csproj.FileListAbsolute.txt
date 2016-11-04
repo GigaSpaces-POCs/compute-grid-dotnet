@@ -1,0 +1,12 @@
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\Feeder.exe.config
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\Feeder.exe
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\Feeder.pdb
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\GigaSpaces.Core.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\GigaSpaces.JavaToNet.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\GigaSpaces.NetToJava.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\Model.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\Model.pdb
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\bin\Debug\GigaSpaces.Core.xml
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\obj\Debug\Feeder.csprojResolveAssemblyReference.cache
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\obj\Debug\Feeder.exe
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Feeder\obj\Debug\Feeder.pdb

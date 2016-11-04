@@ -27,7 +27,7 @@ namespace MasterProject
         static Double Rate = 0.05;
         static Dictionary<String, Double> aggResults = new Dictionary<String, Double>();
         static Dictionary<int, object[]> IdsMap = new Dictionary<int, object[]>();
-
+        static Stopwatch stopWatch = new Stopwatch();
 
         public static void Main(string[] args)
         {
@@ -67,7 +67,9 @@ namespace MasterProject
                 Console.WriteLine("Rate is: " + (int)(Rate * 100) + "%");
                 Console.WriteLine();
                 InitIdsMap(numOfTrades);
+                stopWatch.Start();
                 GenenateJobs();
+                stopWatch.Stop();
                 Console.WriteLine();
                 DisplayResults();
 
@@ -115,15 +117,14 @@ namespace MasterProject
                         if (serviceDataA[k].Data[l] != null)
                         {
                             CalculateNPVUtil.subreducer(aggResults, serviceDataA[k].Data[l].resultData); 
-                        }
-                        
-                 
+                        } 
                         Console.WriteLine("From GenenateJobs using Task now Results found for k=" + k);
                 }
             }
         }
 
         public static void DisplayResults() {
+                Console.WriteLine("Calculation Time: " + stopWatch.Elapsed);
                 Console.WriteLine("Book0 " + "NPV: " + aggResults["Book0"]);
                 Console.WriteLine("Book1 " + "NPV: " + aggResults["Book1"]);
                 Console.WriteLine("Book2 " + "NPV: " + aggResults["Book2"]);
