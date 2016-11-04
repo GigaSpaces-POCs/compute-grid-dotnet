@@ -32,6 +32,13 @@ namespace MasterWorkerModel
             }
         }
 
+        public static Trade[] getMissingTradesFromSpace(List<Object> missingIds, ISpaceProxy tradeDataSpace)
+        {
+
+            IReadByIdsResult<Trade> result = tradeDataSpace.ReadByIds<Trade>(missingIds.ToArray());
+            return result.ResultsArray;
+        }
+
         public static Dictionary<String, Double> execute(ILocalCache localCache, ISpaceProxy tradeDataSpace, Object[] tradeIds, Double rate)
         {
             Dictionary<String, Double> rtnVal = new Dictionary<string, Double>();
@@ -65,6 +72,7 @@ namespace MasterWorkerModel
             cf.cacheFlowYear4 = ((Double)(id * 80));
             cf.cacheFlowYear5 = ((Double)(id * 100));
             trade.cacheFlowData = cf;
+            trade.NPV = 0.0;
             return trade;
         }
 

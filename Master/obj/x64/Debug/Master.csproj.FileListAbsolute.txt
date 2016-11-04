@@ -35,8 +35,6 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Master\obj\x64\Debug\Ma
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Master\obj\x64\Debug\Master.exe
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Master\obj\x64\Debug\Master.pdb
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debug\Master.exe.config
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.exe
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.pdb
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debug\Master.exe
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debug\Master.pdb
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debug\GigaSpaces.Core.dll
@@ -46,3 +44,8 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debu
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debug\GigaSpaces.Core.xml
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debug\Model.pdb
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.csprojResolveAssemblyReference.cache
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.exe
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.pdb
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\bin\x64\Debug\Master.exe.config
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\obj\x64\Debug\Master.exe
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\obj\x64\Debug\Master.pdb

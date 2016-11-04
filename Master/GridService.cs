@@ -62,7 +62,7 @@ namespace MasterProject
                     }
                     catch (Exception e)
                     {
-                        e.ToString();
+                        Console.WriteLine(e.ToString());
                         // rollback the transaction
                         txn.Abort();
                     }
