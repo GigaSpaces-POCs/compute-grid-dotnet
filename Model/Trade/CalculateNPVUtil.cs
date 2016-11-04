@@ -65,12 +65,22 @@ namespace MasterWorkerModel
             Trade trade = new Trade();
             trade.id = id;
             CacheFlowData cf = new CacheFlowData();
-            cf.cacheFlowYear0 = ((Double)(id * -100));
-            cf.cacheFlowYear1 = ((Double)(id * 20));
-            cf.cacheFlowYear2 = ((Double)(id * 40));
-            cf.cacheFlowYear3 = ((Double)(id * 60));
-            cf.cacheFlowYear4 = ((Double)(id * 80));
-            cf.cacheFlowYear5 = ((Double)(id * 100));
+            if (id < 10000) {
+                cf.cacheFlowYear0 = ((Double)(id * -100));
+                cf.cacheFlowYear1 = ((Double)(id * 20));
+                cf.cacheFlowYear2 = ((Double)(id * 40));
+                cf.cacheFlowYear3 = ((Double)(id * 60));
+                cf.cacheFlowYear4 = ((Double)(id * 80));
+                cf.cacheFlowYear5 = ((Double)(id * 100));
+            }
+            else {
+                cf.cacheFlowYear0 = ((Double)(id * -1));
+                cf.cacheFlowYear1 = ((Double)(id * 0.2));
+                cf.cacheFlowYear2 = ((Double)(id * 0.4));
+                cf.cacheFlowYear3 = ((Double)(id * 0.6));
+                cf.cacheFlowYear4 = ((Double)(id * 0.8));
+                cf.cacheFlowYear5 = ((Double)(id));
+            }
             trade.cacheFlowData = cf;
             trade.NPV = 0.0;
             return trade;

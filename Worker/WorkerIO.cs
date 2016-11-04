@@ -54,20 +54,20 @@ namespace WorkerProject
             Result result = new Result();
             result.JobID = request.JobID;
             result.TaskID = request.TaskID;
-            Console.Write("Calculating NPV for trades: { ");
-            foreach (int id in request.TradeIds)
-            {
-                Console.Write(id + " ");
-            }
-            Console.Write("}");
+           // Console.Write("Calculating NPV for trades: { ");
+          //  foreach (int id in request.TradeIds)
+           // {
+             //   Console.Write(id + " ");
+            //}
+            //Console.Write("}");
             try
             {
                 Dictionary<String, Double> resData = CalculateNPVUtil.execute(localCache, proxy, request.TradeIds, request.Rate);
                 result.resultData = resData;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-               Console.WriteLine(ex.ToString());
+               Console.WriteLine(e.ToString());
             }
             return result;
         }

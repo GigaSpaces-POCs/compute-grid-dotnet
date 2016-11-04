@@ -36,9 +36,10 @@ namespace MasterProject
             ServiceData serviceData = new ServiceData();
             Result reponseTemplate = new Result();
             reponseTemplate.JobID = jobId;
-            int previousResultCount = 0;
             int newResultCount = 0;
+            int pointer = 0;
             Result[] finalResult = new Result[totalTask];
+
             while (newResultCount < totalTask)
             {
                 using (ITransaction txn = Master.TxnManager.Create(30000))
@@ -49,13 +50,12 @@ namespace MasterProject
                         if (resultA.Length > 0)
                         {
                             newResultCount += resultA.Length;
-
-                            for (int i = previousResultCount; i < newResultCount; i++)
+                            for(int i=0; i < resultA.Length; i++)
                             {
-                                finalResult[i] = resultA[i - previousResultCount];
+                                finalResult[pointer] = resultA[i];
+                                pointer++;
                             }
-                            Console.WriteLine("From GridService.CollectNext for jobId=" + jobId + " numberOfResultsFound =" + serviceData.Data.Length + ", newResultCount=" + newResultCount);
-                            previousResultCount = newResultCount;
+                           // Console.WriteLine("From GridService.CollectNext for jobId=" + jobId + " numberOfResultsFound =" + resultA.Length + ", newResultCount=" + newResultCount);
                         }
                         txn.Commit();
                         Thread.Sleep(timeout);
