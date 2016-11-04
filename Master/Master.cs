@@ -162,7 +162,7 @@ namespace MasterProject
                     requests[i].ServiceName = serviceName;
                     requests[i].FunctionName = functionName;
                     requests[i].Parameters = paramters;
-                    requests[i].Priority = 1;
+                    requests[i].Priority =  i % 4 + 1;
                     requests[i].Rate = Rate;
                     requests[i].TradeIds = IdsMap[MapIndex];
                     MapIndex++;   

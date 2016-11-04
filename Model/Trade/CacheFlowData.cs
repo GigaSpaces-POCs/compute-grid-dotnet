@@ -16,5 +16,10 @@ namespace MasterWorkerModel
         public Double cacheFlowYear3 { get; set; }
         public Double cacheFlowYear4 { get; set; }
         public Double cacheFlowYear5 { get; set; }
+
+        public override String ToString()
+        {
+            return "cf0:" + this.cacheFlowYear0 + " cf1:" + cacheFlowYear1;
+        }
     }
 }
