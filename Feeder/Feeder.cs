@@ -21,10 +21,11 @@ namespace Feeder
             Console.WriteLine("Connecting to Space:" + url);
             SpaceProxy = GigaSpacesFactory.FindSpace(url);
             Console.WriteLine("Inserting " + numOfTrades + " Trades in the space");
-            Trade[] trades = new Trade[numOfTrades];
+            
             Int32 k=0;
-            if (numOfTrades < batchSize)
+            if (numOfTrades <= batchSize)
             {
+                Trade[] trades = new Trade[numOfTrades];
                 for (int i = 0; i < numOfTrades; i++)
                 {
                     trades[i] = CalculateNPVUtil.generateTrade(i + 1);
@@ -35,10 +36,10 @@ namespace Feeder
             {
                 for (int i = 0; i < numOfTrades / batchSize; i++)
                 {
-                    trades = new Trade[batchSize];
+                    Trade[] trades = new Trade[batchSize];
                     for (int j = 0; j < numOfTrades; j++)
                     {
-                        trades[k] = CalculateNPVUtil.generateTrade(i + 1);
+                        trades[k] = CalculateNPVUtil.generateTrade(k + 1);
                         k++;
                     }
                     SpaceProxy.WriteMultiple(trades);
