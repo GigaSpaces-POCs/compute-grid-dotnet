@@ -1,1 +1,1 @@
-Master\bin\x64\Debug\Master.exe jini://*/*/AIGDemo?groups=ght1 10 10
+Master\bin\x64\Debug\Master.exe jini://*/*/CGDemo?locators=127.0.0.1 10 10

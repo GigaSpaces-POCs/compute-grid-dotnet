@@ -1,2 +1,2 @@
-SET SPACE_NAME=AIGDemo
-Worker\bin\x64\Debug\Worker.exe  jini://*/*/%SPACE_NAME%?groups=ght1 NIO 0
+SET SPACE_NAME=CGDemo
+Worker\bin\x64\Debug\Worker.exe  jini://*/*/%SPACE_NAME%?locators=127.0.0.1 NIO 0

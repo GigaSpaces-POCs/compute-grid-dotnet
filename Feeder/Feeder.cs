@@ -16,17 +16,36 @@ namespace Feeder
         public static void Main(string[] args)
         {
             url = args[0];
+            Int32 batchSize = 1000000;
             numOfTrades = Convert.ToInt32(args[1]);
             Console.WriteLine("Connecting to Space:" + url);
             SpaceProxy = GigaSpacesFactory.FindSpace(url);
             Console.WriteLine("Inserting " + numOfTrades + " Trades in the space");
             Trade[] trades = new Trade[numOfTrades];
-            for (int i = 0; i < numOfTrades; i++)
+            Int32 k=0;
+            if (numOfTrades < batchSize)
             {
-                trades[i] = CalculateNPVUtil.generateTrade(i + 1);
+                for (int i = 0; i < numOfTrades; i++)
+                {
+                    trades[i] = CalculateNPVUtil.generateTrade(i + 1);
+                }
+                SpaceProxy.WriteMultiple(trades);
             }
-            SpaceProxy.WriteMultiple(trades);
+            else
+            {
+                for (int i = 0; i < numOfTrades / batchSize; i++)
+                {
+                    trades = new Trade[batchSize];
+                    for (int j = 0; j < numOfTrades; j++)
+                    {
+                        trades[k] = CalculateNPVUtil.generateTrade(i + 1);
+                        k++;
+                    }
+                    SpaceProxy.WriteMultiple(trades);
+                }
+            }
             Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
     }
 }

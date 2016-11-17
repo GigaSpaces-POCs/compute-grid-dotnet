@@ -1,1 +1,1 @@
-Feeder\bin\x64\Debug\Feeder.exe jini://*/*/AIGDemo?groups=ght1 1000
+Feeder\bin\x64\Debug\Feeder.exe jini://*/*/CGDemo?locators=127.0.0.1 100000
