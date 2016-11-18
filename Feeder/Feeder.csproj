@@ -53,14 +53,17 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GigaSpaces.Core">
-      <HintPath>..\..\..\..\GigaSpaces\XAP.NET-12.0.1-x64\NET v4.0\Bin\GigaSpaces.Core.dll</HintPath>
+    <Reference Include="GigaSpaces.Core, Version=12.0.0.0, Culture=neutral, PublicKeyToken=94297b57ee0e4ad5, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\XAP.NET-11.0.0-x64\NET v4.0\Bin\GigaSpaces.Core.dll</HintPath>
     </Reference>
-    <Reference Include="GigaSpaces.JavaToNet">
-      <HintPath>..\..\..\..\GigaSpaces\XAP.NET-12.0.1-x64\NET v4.0\Bin\GigaSpaces.JavaToNet.dll</HintPath>
+    <Reference Include="GigaSpaces.JavaToNet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=94297b57ee0e4ad5, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\XAP.NET-11.0.0-x64\NET v4.0\Bin\GigaSpaces.JavaToNet.dll</HintPath>
     </Reference>
-    <Reference Include="GigaSpaces.NetToJava">
-      <HintPath>..\..\..\..\GigaSpaces\XAP.NET-12.0.1-x64\NET v4.0\Bin\GigaSpaces.NetToJava.dll</HintPath>
+    <Reference Include="GigaSpaces.NetToJava, Version=12.0.0.0, Culture=neutral, PublicKeyToken=94297b57ee0e4ad5, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\XAP.NET-11.0.0-x64\NET v4.0\Bin\GigaSpaces.NetToJava.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
