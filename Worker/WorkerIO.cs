@@ -35,7 +35,7 @@ namespace WorkerProject
             proxy = space;
             TimeSpan ts = new TimeSpan(10,0,0,0);
             IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
-            cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(2000000, 1000,ts);
+            cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(1000000, 1000,ts);
             localCache = GigaSpacesFactory.CreateIdBasedLocalCache(tradeSpace,cacheConfig);
         }
 
