@@ -55,7 +55,7 @@ namespace MasterProject
                                 finalResult[pointer] = resultA[i];
                                 pointer++;
                             }
-                           // Console.WriteLine("From GridService.CollectNext for jobId=" + jobId + " numberOfResultsFound =" + resultA.Length + ", newResultCount=" + newResultCount);
+                           Console.WriteLine("From GridService.CollectNext for jobId=" + jobId + " numberOfResultsFound =" + resultA.Length + ", newResultCount=" + newResultCount);
                         }
                         txn.Commit();
                         Thread.Sleep(timeout);

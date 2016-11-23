@@ -1,11 +1,13 @@
 ﻿using GigaSpaces.Core;
 using GigaSpaces.Core.Cache;
+using GigaSpaces.Core.Cache.Eviction;
 using GigaSpaces.XAP.Events;
 using GigaSpaces.XAP.Events.Polling;
 using GigaSpaces.XAP.Events.Polling.Receive;
 using MasterWorkerModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -17,7 +19,7 @@ namespace WorkerProject
     public class WorkeIO
     {
         private ISpaceProxy proxy;
-
+    
         private ILocalCache localCache;
 
         public WorkeIO()
@@ -26,12 +28,15 @@ namespace WorkerProject
             Console.WriteLine();
         }
 
-        public WorkeIO(ISpaceProxy space)
+        public WorkeIO(ISpaceProxy space,ISpaceProxy tradeSpace)
         {
             Console.WriteLine("*** Worker started in Blocking IO mode.");
             Console.WriteLine();
             proxy = space;
-            localCache = GigaSpacesFactory.CreateIdBasedLocalCache(space);
+            TimeSpan ts = new TimeSpan(10,0,0,0);
+            IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
+            cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(2000000, 1000,ts);
+            localCache = GigaSpacesFactory.CreateIdBasedLocalCache(tradeSpace,cacheConfig);
         }
 
         [EventTemplate]
@@ -47,6 +52,9 @@ namespace WorkerProject
         [DataEventHandler]
         public Result ProcessData(Request request)
         {
+            DateTime start;
+            TimeSpan time;
+            start = DateTime.Now;
             Console.WriteLine("Worker.ProcessData called for " + request.JobID + " - " + request.TaskID + "- priority=" + request.Priority);
             //process Data here and return processed data
             //Thread.Sleep(Worker.SleepTime);
@@ -64,10 +72,13 @@ namespace WorkerProject
             {
                 Dictionary<String, Double> resData = CalculateNPVUtil.execute(localCache, proxy, request.TradeIds, request.Rate);
                 result.resultData = resData;
+                time = DateTime.Now - start;
+                result.Processingtime = time.Milliseconds;
+
             }
             catch (Exception e)
             {
-               Console.WriteLine(e.ToString());
+                Console.WriteLine(e.ToString());
             }
             return result;
         }

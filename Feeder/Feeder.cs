@@ -16,7 +16,7 @@ namespace Feeder
         public static void Main(string[] args)
         {
             url = args[0];
-            Int32 batchSize = 1000000;
+            Int32 batchSize = 10000;
             numOfTrades = Convert.ToInt32(args[1]);
             Console.WriteLine("Connecting to Space:" + url);
             SpaceProxy = GigaSpacesFactory.FindSpace(url);
@@ -37,7 +37,7 @@ namespace Feeder
                 for (int i = 0; i < numOfTrades / batchSize; i++)
                 {
                     Trade[] trades = new Trade[batchSize];
-                    for (int j = 0; j < numOfTrades; j++)
+                    for (int j = 0; j < batchSize; j++)
                     {
                         trades[j] = CalculateNPVUtil.generateTrade(k + 1);
                         k++;

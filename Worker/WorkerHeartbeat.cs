@@ -7,7 +7,7 @@ namespace WorkerProject
 {
     class WorkerHeartbeat
     {
-        int count = 0;
+        //int count = 0;
         int timeout = Worker.SleepTime;
         public WorkerHeartbeat(int timeout)
         {
@@ -26,11 +26,11 @@ namespace WorkerProject
                     IChangeResult<WorkerProcess> changeResult = Worker.ComputeSpaceProxy.Change<WorkerProcess>(idQuery, new ChangeSet().Lease(10000));
                     if (changeResult.NumberOfChangedEntries == 0)
                     {
-                        Console.WriteLine("new workerProcess added " + count++ + ", timeout=" + timeout);
+                       // Console.WriteLine("new workerProcess added " + count++ + ", timeout=" + timeout);
                          WriteHeartBeat(workerProcess);
                     } else
                     {
-                        Console.WriteLine("existing workerProcess updated " + count++ + ", timeout=" + timeout);
+                        //Console.WriteLine("existing workerProcess updated " + count++ + ", timeout=" + timeout);
                     }
                     Thread.Sleep(timeout);
                 }

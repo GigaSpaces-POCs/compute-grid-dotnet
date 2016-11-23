@@ -14,11 +14,13 @@ namespace MasterProject
     public class Master
     {
         public static ISpaceProxy SpaceProxy;
+        public static ISpaceProxy TradeSpaceProxy;
         public static ITransactionManager TxnManager = null;
         public static String HostName;
         public static Process CurrentProcess = null;
         static int JobId = 0;
         private static String url = null;
+        private static String tradeUrl = null;
         public static int NumberOfJobs = 100;
         public static int NumberOfTask = 5;
         public static int Timeout = 1000;
@@ -28,6 +30,7 @@ namespace MasterProject
         static Dictionary<String, Double> aggResults = new Dictionary<String, Double>();
         static Dictionary<int, object[]> IdsMap = new Dictionary<int, object[]>();
         static Stopwatch stopWatch = new Stopwatch();
+        static int? totalCalcTime = 0;
 
         public static void Main(string[] args)
         {
@@ -42,12 +45,13 @@ namespace MasterProject
             else
             {
                 url = args[0];
-                tradesPerTask = args.Length == 1 ? 10 : Convert.ToInt32(args[1]);
-                NumberOfTask = args.Length == 2 ? 10 : Convert.ToInt32(args[2]);
+                tradeUrl = args[1];
+                tradesPerTask = args.Length == 1 ? 10 : Convert.ToInt32(args[2]);
+                NumberOfTask = args.Length == 2 ? 10 : Convert.ToInt32(args[3]);
             }
             Console.WriteLine("*** Connecting to remote space named '" + url + "' From Master...");
             SpaceProxy = GigaSpacesFactory.FindSpace(url);
-
+            TradeSpaceProxy = GigaSpacesFactory.FindSpace(tradeUrl);
             MasterHeartbeat masterHeartbeat = new MasterHeartbeat(Timeout);
             Thread workerThread = new Thread(masterHeartbeat.DoWork);
             workerThread.Start();
@@ -56,18 +60,18 @@ namespace MasterProject
 
         public Master()
         {
-            Console.WriteLine(Environment.NewLine + "Welcome to XAP.NET 12 Master!" + Environment.NewLine);
+            Console.WriteLine(Environment.NewLine + "Welcome to XAP.NET 11 Master!" + Environment.NewLine);
             try
             {
                 TxnManager = GigaSpacesFactory.CreateDistributedTransactionManager();
                 Console.WriteLine("*** Connected to space  From Master.");
-                int numOfTrades = SpaceProxy.Count(new Trade());
+                int numOfTrades = TradeSpaceProxy.Count(new Trade());
                 NumberOfJobs = (int)(numOfTrades / (NumberOfTask * tradesPerTask));
                 Console.WriteLine("*** NumberOfJobs=" + NumberOfJobs);
                 Console.WriteLine("Rate is: " + (int)(Rate * 100) + "%");
                 Console.WriteLine();
                 InitIdsMap(numOfTrades);
-                stopWatch.Start();
+                
                 GenenateJobs();
                 stopWatch.Stop();
                 Console.WriteLine();
@@ -97,6 +101,7 @@ namespace MasterProject
                     Job job = gridService.Submit("Function1", parameters);
                     gridServiceA[j] = gridService;
                 }
+                stopWatch.Start();
                 Task<ServiceData>[] taskArray = {
                                                     Task<ServiceData>.Factory.StartNew(() => gridServiceA[0].CollectNext(1000)),
                                                     Task<ServiceData>.Factory.StartNew(() => gridServiceA[1].CollectNext(1000)),
@@ -116,7 +121,8 @@ namespace MasterProject
                     for (int l = 0; l < serviceDataA[k].Data.Length; l++ )
                         if (serviceDataA[k].Data[l] != null)
                         {
-                            CalculateNPVUtil.subreducer(aggResults, serviceDataA[k].Data[l].resultData); 
+                            CalculateNPVUtil.subreducer(aggResults, serviceDataA[k].Data[l].resultData);
+                            totalCalcTime += serviceDataA[k].Data[l].Processingtime;
                         } 
                         Console.WriteLine("From GenenateJobs using Task now Results found for k=" + k);
                 }
@@ -124,7 +130,8 @@ namespace MasterProject
         }
 
         public static void DisplayResults() {
-                Console.WriteLine("Calculation Time: " + stopWatch.Elapsed);
+                Console.WriteLine("Calculation time: " + stopWatch.Elapsed);
+                Console.WriteLine("Avg task processing time: " + (totalCalcTime)/(NumberOfTask * NumberOfJobs) + " ms");
                 Console.WriteLine("Book0 " + "NPV: " + aggResults["Book0"]);
                 Console.WriteLine("Book1 " + "NPV: " + aggResults["Book1"]);
                 Console.WriteLine("Book2 " + "NPV: " + aggResults["Book2"]);
