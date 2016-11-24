@@ -1,0 +1,9 @@
+﻿System.InvalidCastException: Cannot convert an object of the type 'GigaSpaces.Core.Metadata.DocumentSpaceTypeDescriptor' in the type 'GigaSpaces.Core.Metadata.ConcreteSpaceTypeDescriptor'.
+   at GigaSpaces.Core.Metadata.SpaceTypeInfoCache.GetTypeInfo(Type type)
+   at GigaSpaces.Core.Internal.SpaceProxy.AbstractSpaceProxyInternal.GenerateTypeDesciptor(Type type, Boolean registerViaProxy)
+   at GigaSpaces.Core.Internal.ObjectContainer..ctor(Object obj, SpaceDocument document, ObjectType objectType, QueryResultType resultEntryType, Delegate projectionMethod, UpdateOnceCache`2 typeNameInfoCache, UpdateOnceCache`2 typeInfoCache, String typeName, Type type, AbstractSpaceProxyInternal spaceProxy, Boolean implicitRegister)
+   at GigaSpaces.Core.Internal.SpaceProxy.AbstractSpaceProxyInternal.ReadByIds[T](ReadTakeByIdsActionInfo& actionInfo)
+   at GigaSpaces.Core.Internal.SpaceProxy.ReadOnlySpaceProxy.ReadByIdsInternal[T](ReadTakeByIdsActionInfo& actionInfo)
+   at GigaSpaces.Core.Internal.SpaceProxy.ReadOnlySpaceProxy.ReadByIds[T](Object[] ids)
+   at MasterWorkerModel.CalculateNPVUtil.execute(IReadOnlySpaceProxy localCache, ISpaceProxy tradeDataSpace, Object[] tradeIds, Double rate) na C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\Trade\CalculateNPVUtil.cs:linha 39
+   at WorkerProject.WorkeIO.ProcessData(Request request) na C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\WorkerIO.cs:linha 80-

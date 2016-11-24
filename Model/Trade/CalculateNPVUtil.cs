@@ -33,13 +33,6 @@ namespace MasterWorkerModel
             }
         }
 
-        public static Trade[] getMissingTradesFromSpace(List<Object> missingIds, ISpaceProxy tradeDataSpace)
-        {
-
-            IReadByIdsResult<Trade> result = tradeDataSpace.ReadByIds<Trade>(missingIds.ToArray());
-            return result.ResultsArray;
-        }
-
         public static Dictionary<String, Double> execute(ILocalCache localCache, ISpaceProxy tradeDataSpace, Object[] tradeIds, Double rate)
         {
             Dictionary<String, Double> rtnVal = new Dictionary<string, Double>();
@@ -85,6 +78,7 @@ namespace MasterWorkerModel
 
         public static void subreducer(Dictionary<String, Double> aggregatedNPVCalc, Dictionary<String, Double> incPositions)
         {
+            if(incPositions != null)
             foreach (String key in incPositions.Keys)
             {
                 if (aggregatedNPVCalc.ContainsKey(key))
