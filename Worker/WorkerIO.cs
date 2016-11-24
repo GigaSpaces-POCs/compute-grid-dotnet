@@ -19,8 +19,10 @@ namespace WorkerProject
     public class WorkeIO
     {
         private ISpaceProxy proxy;
-    
+
         private ILocalCache localCache;
+
+        private ISpaceProxy tradeProxy;
 
         public WorkeIO()
         {
@@ -33,10 +35,13 @@ namespace WorkerProject
             Console.WriteLine("*** Worker started in Blocking IO mode.");
             Console.WriteLine();
             proxy = space;
+            tradeProxy = tradeSpace;
             TimeSpan ts = new TimeSpan(10,0,0,0);
             IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
             cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(1000000, 1000,ts);
             localCache = GigaSpacesFactory.CreateIdBasedLocalCache(tradeSpace,cacheConfig);
+            localCache.ReadMultiple<Trade>(new Trade());
+            Console.WriteLine("*** Local cache initialized.");
         }
 
         [EventTemplate]

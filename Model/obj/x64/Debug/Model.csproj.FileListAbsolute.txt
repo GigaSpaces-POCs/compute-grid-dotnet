@@ -30,6 +30,5 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\bin\x64\Debug
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\bin\x64\Debug\GigaSpaces.JavaToNet.dll
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\bin\x64\Debug\GigaSpaces.NetToJava.dll
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\bin\x64\Debug\GigaSpaces.Core.xml
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\obj\x64\Debug\Model.csprojResolveAssemblyReference.cache
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\obj\x64\Debug\Model.dll
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Model\obj\x64\Debug\Model.pdb
