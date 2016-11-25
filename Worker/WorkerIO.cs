@@ -24,6 +24,8 @@ namespace WorkerProject
 
         private ISpaceProxy tradeProxy;
 
+        private int cacheSize = 10000;
+
         public WorkeIO()
         {
             Console.WriteLine("*** Worker started in Blocking IO mode.");
@@ -38,9 +40,15 @@ namespace WorkerProject
             tradeProxy = tradeSpace;
             TimeSpan ts = new TimeSpan(10,0,0,0);
             IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
-            cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(1000000, 1000,ts);
+            cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(cacheSize,1000,ts);
             localCache = GigaSpacesFactory.CreateIdBasedLocalCache(tradeSpace,cacheConfig);
-            localCache.ReadMultiple<Trade>(new Trade());
+            Random rng = new Random();
+            object[] tradesToCache = new object[cacheSize];
+            for (int i = 0; i < cacheSize; i++)
+            {
+                tradesToCache[i] = rng.Next(1, 1000000);
+            }
+            localCache.ReadByIds<Trade>(tradesToCache);
             Console.WriteLine("*** Local cache initialized.");
         }
 
