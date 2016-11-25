@@ -52,7 +52,7 @@ namespace WorkerProject
                 eventListenerContainer.Start();
             } else if (ioType.Equals("NIO"))
             {
-                IEventListenerContainer<Request> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Request>(ComputeSpaceProxy, new WorkeNIO(ComputeSpaceProxy));
+                IEventListenerContainer<Request> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Request>(ComputeSpaceProxy, new WorkeNIO(ComputeSpaceProxy, TradeSpaceProxy));
                 eventListenerContainer.Start();
             } else
             {

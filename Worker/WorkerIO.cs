@@ -20,11 +20,7 @@ namespace WorkerProject
     {
         private ISpaceProxy proxy;
 
-        private ILocalCache localCache;
-
         private ISpaceProxy tradeProxy;
-
-        private int cacheSize = 10000;
 
         public WorkeIO()
         {
@@ -38,18 +34,6 @@ namespace WorkerProject
             Console.WriteLine();
             proxy = space;
             tradeProxy = tradeSpace;
-            TimeSpan ts = new TimeSpan(10,0,0,0);
-            IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
-            cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(cacheSize,1000,ts);
-            localCache = GigaSpacesFactory.CreateIdBasedLocalCache(tradeSpace,cacheConfig);
-            Random rng = new Random();
-            object[] tradesToCache = new object[cacheSize];
-            for (int i = 0; i < cacheSize; i++)
-            {
-                tradesToCache[i] = rng.Next(1, 1000000);
-            }
-            localCache.ReadByIds<Trade>(tradesToCache);
-            Console.WriteLine("*** Local cache initialized.");
         }
 
         [EventTemplate]
@@ -83,7 +67,7 @@ namespace WorkerProject
             //Console.Write("}");
             try
             {
-                Dictionary<String, Double> resData = CalculateNPVUtil.execute(localCache, proxy, request.TradeIds, request.Rate);
+                Dictionary<String, Double> resData = CalculateNPVUtil.execute(tradeProxy, request.TradeIds, request.Rate);
                 result.resultData = resData;
                 time = DateTime.Now - start;
                 result.Processingtime = time.Milliseconds;

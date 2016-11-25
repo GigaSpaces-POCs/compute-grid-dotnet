@@ -33,10 +33,10 @@ namespace MasterWorkerModel
             }
         }
 
-        public static Dictionary<String, Double> execute(ILocalCache localCache, ISpaceProxy tradeDataSpace, Object[] tradeIds, Double rate)
+        public static Dictionary<String, Double> execute(ISpaceProxy tradeDataSpace, Object[] tradeIds, Double rate)
         {
             Dictionary<String, Double> rtnVal = new Dictionary<string, Double>();
-            IReadByIdsResult<Trade> result = localCache.ReadByIds<Trade>(tradeIds);
+            IReadByIdsResult<Trade> result = tradeDataSpace.ReadByIds<Trade>(tradeIds);
             List<Trade> tlist = new List<Trade>();
             foreach (Trade t in result) {
                 tlist.Add(t);

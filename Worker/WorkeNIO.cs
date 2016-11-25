@@ -18,7 +18,7 @@ namespace WorkerProject
     {
         private ISpaceProxy proxy;
 
-        private ILocalCache localCache;
+        private ISpaceProxy tradeProxy;
 
         public WorkeNIO()
         {
@@ -27,13 +27,13 @@ namespace WorkerProject
             Console.WriteLine();
         }
 
-        public WorkeNIO(ISpaceProxy space)
+        public WorkeNIO(ISpaceProxy space, ISpaceProxy tradeSpace)
         {
             // Connect to space:
             Console.WriteLine("*** Worker started in NonBlocking IO mode.");
             Console.WriteLine();
             proxy = space;
-            localCache = GigaSpacesFactory.CreateIdBasedLocalCache(space);
+            tradeProxy = tradeSpace;
         }
 
         [EventTemplate]
@@ -65,7 +65,7 @@ namespace WorkerProject
             //Console.Write("}");
             try
             {
-                Dictionary<String, Double> resultData = CalculateNPVUtil.execute(localCache, proxy, request.TradeIds, request.Rate);
+                Dictionary<String, Double> resultData = CalculateNPVUtil.execute(tradeProxy, request.TradeIds, request.Rate);
                 result.resultData = resultData;
             }
             catch (Exception e)
