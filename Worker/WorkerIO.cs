@@ -24,11 +24,11 @@ namespace WorkerProject
 
         private ILocalCache localCache;
 
-        private int cacheSize = 10000;
+        private int cacheSize = 1000000;
 
         private int cacheBatchSize = 1000;
 
-        private int spaceSize = 50000;
+        private int spaceSize = 5000000;
 
         public WorkeIO()
         {

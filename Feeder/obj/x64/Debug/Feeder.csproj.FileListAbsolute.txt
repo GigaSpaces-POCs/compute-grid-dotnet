@@ -34,3 +34,12 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Feeder\bin\x64\
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Feeder\obj\x64\Debug\Feeder.csprojResolveAssemblyReference.cache
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Feeder\obj\x64\Debug\Feeder.exe
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Feeder\obj\x64\Debug\Feeder.pdb
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\bin\x64\Debug\Feeder.exe.config
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\bin\x64\Debug\Feeder.exe
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\bin\x64\Debug\Feeder.pdb
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\bin\x64\Debug\Model.dll
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\bin\x64\Debug\Model.pdb
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\bin\x64\Debug\GigaSpaces.Core.xml
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\obj\x64\Debug\Feeder.csprojResolveAssemblyReference.cache
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\obj\x64\Debug\Feeder.exe
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Feeder\obj\x64\Debug\Feeder.pdb
