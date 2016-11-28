@@ -27,7 +27,7 @@ namespace MasterProject
         static int MapIndex = 0;
         static int tradesPerTask = 10;
         static Double Rate = 0.05;
-        static Dictionary<String, Double> aggResults = new Dictionary<String, Double>();
+        static Dictionary<String, Double[]> aggResults = new Dictionary<String, Double[]>();
         static Dictionary<int, object[]> IdsMap = new Dictionary<int, object[]>();
         static Stopwatch stopWatch = new Stopwatch();
         static int? totalCalcTime = 0;
@@ -121,7 +121,7 @@ namespace MasterProject
                     for (int l = 0; l < serviceDataA[k].Data.Length; l++ )
                         if (serviceDataA[k].Data[l] != null)
                         {
-                            CalculateNPVUtil.subreducer(aggResults, serviceDataA[k].Data[l].resultData);
+                            CalculateUtil.subreducer(aggResults, serviceDataA[k].Data[l].resultData);
                             totalCalcTime += serviceDataA[k].Data[l].Processingtime;
                         } 
                         Console.WriteLine("From GenenateJobs using Task now Results found for k=" + k);
@@ -132,10 +132,15 @@ namespace MasterProject
         public static void DisplayResults() {
                 Console.WriteLine("Calculation time: " + stopWatch.Elapsed);
                 Console.WriteLine("Avg task processing time: " + (totalCalcTime)/(NumberOfTask * NumberOfJobs) + " ms");
-                Console.WriteLine("Book0 " + "NPV: " + aggResults["Book0"]);
-                Console.WriteLine("Book1 " + "NPV: " + aggResults["Book1"]);
-                Console.WriteLine("Book2 " + "NPV: " + aggResults["Book2"]);
-                Console.WriteLine("Book3 " + "NPV: " + aggResults["Book3"]);
+                Console.WriteLine("Book0 " + "NPV: " + aggResults["Book0"][0]);
+                Console.WriteLine("Book1 " + "NPV: " + aggResults["Book1"][0]);
+                Console.WriteLine("Book2 " + "NPV: " + aggResults["Book2"][0]);
+                Console.WriteLine("Book3 " + "NPV: " + aggResults["Book3"][0]);
+                Console.WriteLine("");
+                Console.WriteLine("Book0 " + "IRR: " + aggResults["Book0"][1]);
+                Console.WriteLine("Book1 " + "IRR: " + aggResults["Book1"][1]);
+                Console.WriteLine("Book2 " + "IRR: " + aggResults["Book2"][1]);
+                Console.WriteLine("Book3 " + "IRR: " + aggResults["Book3"][1]);
         }
 
         public static void InitIdsMap(int nTrades){

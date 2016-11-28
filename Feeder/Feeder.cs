@@ -28,7 +28,7 @@ namespace Feeder
                 trades = new Trade[numOfTrades];
                 for (int i = 0; i < numOfTrades; i++)
                 {
-                    trades[i] = CalculateNPVUtil.generateTrade(i + 1);
+                    trades[i] = CalculateUtil.generateTrade(i + 1);
                 }
                 SpaceProxy.WriteMultiple(trades);
             }
@@ -39,7 +39,7 @@ namespace Feeder
                     trades = new Trade[batchSize];
                     for (int j = 0; j < batchSize; j++)
                     {
-                        trades[j] = CalculateNPVUtil.generateTrade(k + 1);
+                        trades[j] = CalculateUtil.generateTrade(k + 1);
                         k++;
                     }
                     SpaceProxy.WriteMultiple(trades);

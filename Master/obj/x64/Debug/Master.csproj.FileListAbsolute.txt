@@ -46,3 +46,15 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\bin\x64\Debu
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.csprojResolveAssemblyReference.cache
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.exe
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Master\obj\x64\Debug\Master.pdb
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\Master.exe.config
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\Master.exe
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\Master.pdb
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\GigaSpaces.Core.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\GigaSpaces.JavaToNet.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\GigaSpaces.NetToJava.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\Model.dll
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\GigaSpaces.Core.xml
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\Debug\Model.pdb
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\obj\x64\Debug\Master.csprojResolveAssemblyReference.cache
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\obj\x64\Debug\Master.exe
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\obj\x64\Debug\Master.pdb

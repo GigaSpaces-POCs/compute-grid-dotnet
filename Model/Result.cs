@@ -11,7 +11,7 @@ namespace MasterWorkerModel
     [SpaceClass]
     public class Result : Base
     {
-        public Dictionary<String, Double> resultData { get; set; }
+        public Dictionary<String, Double[]> resultData { get; set; }
         public int? Processingtime { get; set; }
     }
 }

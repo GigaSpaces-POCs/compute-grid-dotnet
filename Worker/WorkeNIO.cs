@@ -20,6 +20,14 @@ namespace WorkerProject
 
         private ISpaceProxy tradeProxy;
 
+        private ILocalCache localCache;
+
+        private int cacheSize = 10000;
+
+        private int cacheBatchSize = 1000;
+
+        private int spaceSize = 50000;
+
         public WorkeNIO()
         {
             // Connect to space:
@@ -65,7 +73,7 @@ namespace WorkerProject
             //Console.Write("}");
             try
             {
-                Dictionary<String, Double> resultData = CalculateNPVUtil.execute(tradeProxy, request.TradeIds, request.Rate);
+                Dictionary<String, Double[]> resultData = CalculateUtil.execute(tradeProxy, localCache, request.TradeIds, request.Rate);
                 result.resultData = resultData;
             }
             catch (Exception e)

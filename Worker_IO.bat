@@ -3,4 +3,4 @@ SET XAP_NIC_ADDRESS=127.0.0.1
 SET XAP_LOOKUP_LOCATORS=127.0.0.1
 SET SPACE_NAME=CGDemo
 SET TRADE_SPACE_NAME=TradeSpace
-Worker\bin\x64\Debug\Worker.exe  jini://*/*/%SPACE_NAME%?locators=127.0.0.1 jini://*/*/%TRADE_SPACE_NAME%?locators=127.0.0.1 IO 0
+Worker\bin\x64\Debug\Worker.exe  jini://*/*/%SPACE_NAME%?locators=127.0.0.1 jini://*/*/%TRADE_SPACE_NAME%?locators=127.0.0.1 IO 1000

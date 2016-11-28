@@ -71,7 +71,7 @@
   <ItemGroup>
     <Compile Include="Base.cs" />
     <Compile Include="Trade\CacheFlowData.cs" />
-    <Compile Include="Trade\CalculateNPVUtil.cs" />
+    <Compile Include="Trade\CalculateUtil.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="JobResult.cs" />
     <Compile Include="MasterProcess.cs" />
