@@ -22,6 +22,14 @@ namespace WorkerProject
 
         private ISpaceProxy tradeProxy;
 
+        private ILocalCache localCache;
+
+        private int cacheSize = 1000000;
+
+        private int cacheBatchSize = 1000;
+
+        private int spaceSize = 5000000;
+
         public WorkeIO()
         {
             Console.WriteLine("*** Worker started in Blocking IO mode.");
@@ -30,10 +38,35 @@ namespace WorkerProject
 
         public WorkeIO(ISpaceProxy space,ISpaceProxy tradeSpace)
         {
+            Random rng = new Random();
             Console.WriteLine("*** Worker started in Blocking IO mode.");
             Console.WriteLine();
             proxy = space;
             tradeProxy = tradeSpace;
+            TimeSpan ts = new TimeSpan(10, 0, 0, 0);
+            IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
+            cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(cacheSize, 1000, ts);
+            localCache = GigaSpacesFactory.CreateIdBasedLocalCache(tradeSpace, cacheConfig);
+            HashSet<Object> ids;
+            for (int i = 0; i < cacheSize / cacheBatchSize; i++)
+            {
+                ids = new HashSet<Object>();
+                for (int j = 0; j < cacheBatchSize; j++)
+                {
+                    int rn = rng.Next(1, spaceSize);
+                    ids.Add(RngRecursive(rn,rng,ids));
+                }
+                
+                try {
+                    //Console.WriteLine("Reading batch: " + i);
+                    localCache.ReadByIds<Trade>(ids.ToArray());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+            Console.WriteLine("*** Cache initializaded.");
         }
 
         [EventTemplate]
@@ -86,6 +119,14 @@ namespace WorkerProject
             TakeReceiveOperationHandler<Request> receiveHandler = new TakeReceiveOperationHandler<Request>();
             receiveHandler.NonBlocking = false;
             return receiveHandler;
+        }
+        private Object RngRecursive(int n,Random rng ,HashSet<Object> hs)
+        {
+            if (hs.Contains<Object>(n))
+            {
+              n = (int)RngRecursive(rng.Next(1, spaceSize), rng, hs);
+            }
+            return (Object)n;
         }
     }
 }
