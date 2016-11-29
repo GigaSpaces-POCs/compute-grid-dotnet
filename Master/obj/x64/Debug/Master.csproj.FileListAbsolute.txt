@@ -58,12 +58,3 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\bin\x64\
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\obj\x64\Debug\Master.csprojResolveAssemblyReference.cache
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\obj\x64\Debug\Master.exe
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Master\obj\x64\Debug\Master.pdb
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\bin\x64\Debug\Master.exe.config
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\bin\x64\Debug\Master.exe
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\bin\x64\Debug\Master.pdb
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\bin\x64\Debug\Model.dll
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\bin\x64\Debug\GigaSpaces.Core.xml
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\bin\x64\Debug\Model.pdb
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\obj\x64\Debug\Master.csprojResolveAssemblyReference.cache
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\obj\x64\Debug\Master.exe
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Master\obj\x64\Debug\Master.pdb

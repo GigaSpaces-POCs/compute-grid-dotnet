@@ -99,8 +99,8 @@ namespace MasterWorkerModel
 
         public static Trade calculateIRR(Trade trade)
         {
-            int MAX_ITER = 500;
-          //  double EXCEL_EPSILON = 0.00000001;
+            int MAX_ITER = 20;
+            double EXCEL_EPSILON = 0.00000001;
             double[] cashFlows = { trade.cacheFlowData.cacheFlowYear0, trade.cacheFlowData.cacheFlowYear1, trade.cacheFlowData.cacheFlowYear2, trade.cacheFlowData.cacheFlowYear3, trade.cacheFlowData.cacheFlowYear4, trade.cacheFlowData.cacheFlowYear5 };
             double x = 0.1;
             int iter = 0;
@@ -118,23 +118,23 @@ namespace MasterWorkerModel
                     dfx += -i * v / x1_i1;
                 }
                 double new_x = x - fx / dfx;
-                //double epsilon = Math.Abs(new_x - x);
+                double epsilon = Math.Abs(new_x - x);
                
-               // if (epsilon <= EXCEL_EPSILON)
-                //{
-                  //  Console.WriteLine("iter=" + iter);
-                   // if (x == 0.0 && Math.Abs(new_x) <= EXCEL_EPSILON)
-                    //{
-                      //  trade.IRR = 0.0;
-                       // return trade; // OpenOffice calc does this
-                   // }
-                    //else
-                    //{
-                      //  trade.IRR = new_x * 100;
-                       // return trade;
-                   // }
+                if (epsilon <= EXCEL_EPSILON)
+                {
+                    Console.WriteLine("iter=" + iter);
+                    if (x == 0.0 && Math.Abs(new_x) <= EXCEL_EPSILON)
+                    {
+                        trade.IRR = 0.0;
+                        return trade; // OpenOffice calc does this
+                    }
+                    else
+                    {
+                        trade.IRR = new_x * 100;
+                        return trade;
+                    }
                     
-                //}
+                }
                 
                 x = new_x;
                 trade.IRR = x;
