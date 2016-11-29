@@ -122,7 +122,7 @@ namespace MasterWorkerModel
                
                 if (epsilon <= EXCEL_EPSILON)
                 {
-                    Console.WriteLine("iter=" + iter);
+                    //Console.WriteLine("iter=" + iter);
                     if (x == 0.0 && Math.Abs(new_x) <= EXCEL_EPSILON)
                     {
                         trade.IRR = 0.0;

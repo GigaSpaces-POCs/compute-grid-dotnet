@@ -42,3 +42,9 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Model\bin\x64\D
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Model\obj\x64\Debug\Model.csprojResolveAssemblyReference.cache
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Model\obj\x64\Debug\Model.dll
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Model\obj\x64\Debug\Model.pdb
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Model\bin\x64\Debug\Model.dll
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Model\bin\x64\Debug\Model.pdb
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Model\bin\x64\Debug\GigaSpaces.Core.xml
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Model\obj\x64\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Model\obj\x64\Debug\Model.dll
+C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Model\obj\x64\Debug\Model.pdb
