@@ -15,6 +15,9 @@ namespace MasterProject
         public void DoWork()
         {
             MasterProcess masterProcess = new MasterProcess();
+            masterProcess.HostName = Master.HostName;
+            masterProcess.ProcessID = Master.CurrentProcess.Id;
+            masterProcess.ID = masterProcess.HostName + "=" + masterProcess.ProcessID;
             while (true)
             {
                 try

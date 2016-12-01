@@ -61,12 +61,12 @@ namespace MasterWorkerModel
             Trade trade = new Trade();
             trade.id = id;
             CacheFlowData cf = new CacheFlowData();
-            cf.cacheFlowYear0 = trunc(random.NextDouble() * -10000);
-            cf.cacheFlowYear1 = trunc(random.NextDouble() * 10000);
-            cf.cacheFlowYear2 = trunc(random.NextDouble() * 10000);
-            cf.cacheFlowYear3 = trunc(random.NextDouble() * 10000);
-            cf.cacheFlowYear4 = trunc(random.NextDouble() * 10000);
-            cf.cacheFlowYear5 = trunc(random.NextDouble() * 10000);
+            cf.cacheFlowYear0 = trunc(random.NextDouble() * 10000 * genNegOrPos());
+            cf.cacheFlowYear1 = trunc(random.NextDouble() * 10000 * genNegOrPos());
+            cf.cacheFlowYear2 = trunc(random.NextDouble() * 10000 * genNegOrPos());
+            cf.cacheFlowYear3 = trunc(random.NextDouble() * 10000 * genNegOrPos());
+            cf.cacheFlowYear4 = trunc(random.NextDouble() * 10000 * genNegOrPos());
+            cf.cacheFlowYear5 = trunc(random.NextDouble() * 10000 * genNegOrPos());
             trade.cacheFlowData = cf;
             trade.NPV = 0.0;
             return trade;
@@ -77,6 +77,16 @@ namespace MasterWorkerModel
             return Math.Truncate(d * 1000) / 1000;
          }
 
+        private static int genNegOrPos()
+        {
+            Random rng = new Random();
+            int n = rng.Next(-10,11);
+            if (n == 0)
+            {
+              n = genNegOrPos();
+            }
+            return n;
+        }
 
         public static void subreducer(Dictionary<String, Double[]> aggregatedNPVCalc, Dictionary<String, Double[]> incPositions)
         {
@@ -99,7 +109,7 @@ namespace MasterWorkerModel
 
         public static Trade calculateIRR(Trade trade)
         {
-            int MAX_ITER = 20;
+            int MAX_ITER = 10;
             double EXCEL_EPSILON = 0.00000001;
             double[] cashFlows = { trade.cacheFlowData.cacheFlowYear0, trade.cacheFlowData.cacheFlowYear1, trade.cacheFlowData.cacheFlowYear2, trade.cacheFlowData.cacheFlowYear3, trade.cacheFlowData.cacheFlowYear4, trade.cacheFlowData.cacheFlowYear5 };
             double x = 0.1;
@@ -137,7 +147,7 @@ namespace MasterWorkerModel
                 }
                 
                 x = new_x;
-                trade.IRR = x;
+                
                 iter++;
             }
             return trade;

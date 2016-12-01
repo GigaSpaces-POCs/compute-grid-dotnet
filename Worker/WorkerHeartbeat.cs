@@ -16,6 +16,8 @@ namespace WorkerProject
         public void DoWork()
         {
             WorkerProcess workerProcess = new WorkerProcess();
+            workerProcess.ProcessID = Worker.CurrentProcess.Id;
+            workerProcess.ID = workerProcess.HostName + "=" + workerProcess.ProcessID;
             while (true)
             {
                 try

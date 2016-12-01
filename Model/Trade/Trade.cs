@@ -13,7 +13,9 @@ namespace MasterWorkerModel
     {
         [SpaceID(AutoGenerate = false)]
         public int? id { get; set; }
+        [SpaceExclude]
         public Double NPV { get; set; }
+        [SpaceExclude]
         public Double IRR { get; set; }
         public CacheFlowData cacheFlowData { get; set; }
 

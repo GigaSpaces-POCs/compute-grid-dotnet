@@ -24,11 +24,11 @@ namespace WorkerProject
 
         private ILocalCache localCache;
 
-        private int cacheSize = 1000000;
+        private int spaceSize = 5000000;
 
         private int cacheBatchSize = 1000;
 
-        private int spaceSize = 5000000;
+        
 
         public WorkeIO()
         {
@@ -38,6 +38,7 @@ namespace WorkerProject
 
         public WorkeIO(ISpaceProxy space,ISpaceProxy tradeSpace)
         {
+            int cacheSize = spaceSize / 5;
             Random rng = new Random();
             Console.WriteLine("*** Worker started in Blocking IO mode.");
             Console.WriteLine();
@@ -110,6 +111,7 @@ namespace WorkerProject
             {
                 Console.WriteLine(e.ToString());
             }
+
             return result;
         }
 

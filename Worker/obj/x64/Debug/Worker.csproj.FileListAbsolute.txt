@@ -1,51 +1,3 @@
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\Worker.exe.config
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\Worker.exe
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\Worker.pdb
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\GigaSpaces.Core.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\GigaSpaces.JavaToNet.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\GigaSpaces.NetToJava.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\Model.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\GigaSpaces.Core.xml
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\bin\x64\Debug\Model.pdb
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\obj\x64\Debug\Worker.csprojResolveAssemblyReference.cache
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\obj\x64\Debug\Worker.exe
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet\Worker\obj\x64\Debug\Worker.pdb
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Worker.exe.config
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Worker.exe
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Worker.pdb
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.Core.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.JavaToNet.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.NetToJava.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Model.dll
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.Core.xml
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Model.pdb
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\obj\x64\Debug\Worker.csprojResolveAssemblyReference.cache
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\obj\x64\Debug\Worker.exe
-C:\GigaSpaces\XAP.NET-11.0.0-x64\NET v4.0\Examples\MasterWorker_DotNet_Priority\Worker\obj\x64\Debug\Worker.pdb
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Worker.exe
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.Core.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.JavaToNet.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.NetToJava.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Model.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Worker.exe.config
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Worker.pdb
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\GigaSpaces.Core.xml
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\bin\x64\Debug\Model.pdb
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\obj\x64\Debug\Worker.csprojResolveAssemblyReference.cache
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\obj\x64\Debug\Worker.exe
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority\Worker\obj\x64\Debug\Worker.pdb
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\Worker.exe.config
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\Worker.exe
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\Worker.pdb
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\GigaSpaces.Core.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\GigaSpaces.JavaToNet.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\GigaSpaces.NetToJava.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\Model.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\GigaSpaces.Core.xml
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\bin\x64\Debug\Model.pdb
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\obj\x64\Debug\Worker.csprojResolveAssemblyReference.cache
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\obj\x64\Debug\Worker.exe
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV\Worker\obj\x64\Debug\Worker.pdb
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\Worker.exe.config
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\Worker.exe
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\Worker.pdb
@@ -53,17 +5,8 @@ C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\GigaSpaces.JavaToNet.dll
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\GigaSpaces.NetToJava.dll
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\Model.dll
-C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\GigaSpaces.Core.xml
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\Model.pdb
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\bin\x64\Debug\GigaSpaces.Core.xml
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\obj\x64\Debug\Worker.csprojResolveAssemblyReference.cache
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\obj\x64\Debug\Worker.exe
 C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Worker\obj\x64\Debug\Worker.pdb
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\bin\x64\Debug\Worker.exe.config
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\bin\x64\Debug\Worker.exe
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\bin\x64\Debug\Worker.pdb
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\bin\x64\Debug\Model.dll
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\bin\x64\Debug\GigaSpaces.Core.xml
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\bin\x64\Debug\Model.pdb
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\obj\x64\Debug\Worker.csprojResolveAssemblyReference.cache
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\obj\x64\Debug\Worker.exe
-C:\Users\Rafael.Nechi\Documents\GitHub\compute-grid-dotnet\Worker\obj\x64\Debug\Worker.pdb

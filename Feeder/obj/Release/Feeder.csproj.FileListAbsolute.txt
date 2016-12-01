@@ -1,0 +1,1 @@
+C:\.NET Demos\ComputingGrid\MasterWorker_DotNet_Priority_NPV_IRR\Feeder\bin\Release\Feeder.exe.config
