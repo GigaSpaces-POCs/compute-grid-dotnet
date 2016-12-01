@@ -85,6 +85,7 @@ namespace WorkerProject
         {
             DateTime start;
             TimeSpan time;
+            Worker.Priority = request.Priority;
             start = DateTime.Now;
             Console.WriteLine("Worker.ProcessData called for " + request.JobID + " - " + request.TaskID + "- priority=" + request.Priority);
             //process Data here and return processed data

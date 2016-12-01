@@ -76,7 +76,8 @@ namespace MasterProject
                 stopWatch.Stop();
                 Console.WriteLine();
                 DisplayResults();
-
+                Console.ReadKey();
+                Console.ReadKey();
                 Console.WriteLine(Environment.NewLine + "NPV Calculation Example finished successfully!" + Environment.NewLine);
             }
             catch (Exception ex)

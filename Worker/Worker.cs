@@ -16,6 +16,7 @@ namespace WorkerProject
         public static String HostName;
         public static Process CurrentProcess = null;
         public static int Timeout = 1000;
+        public static int Priority = 0;
 
         public static void Main(string[] args)
         {

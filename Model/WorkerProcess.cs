@@ -7,5 +7,6 @@ namespace MasterWorkerModel
     [SpaceClass]
     public class WorkerProcess : BaseProcess
     {
+        public int Priority { get; set; }
     }
 }
